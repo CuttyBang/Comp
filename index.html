@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comp</title>
+  </head>
+  <body>
+    <div class="app">
+
+      <div class="transport_wrapper">
+        <div class="transport">
+          <button id="startButton" class="transBtn" type="button" name="button">START</button>
+          <button id="stopButton" class="transBtn" type="button" name="button">STOP</button>
+        </div>
+      </div>
+
+      <div class="plug flexible center middle">
+        <div class="plate flexible middle center">
+          <div class="plate_face flexible middle between">
+            <div class="compContainer">
+<!----------------->
+              <div class="compContainerTop">
+                <div class="compTopKnobBox">
+                  <webaudio-knob src="./images/ma_left_150.png" id="wetdry_control" class="knob" sensitivity="0.125" enable="1" diameter="110" sprites="100" value="0.5" min="0" max="1" step="0.001" ></webaudio-knob>
+                  <webaudio-knob src="./images/ma_left_150.png" id="volume_control" class="knob" sensitivity="0.125" enable="1" diameter="110" sprites="100" value="0.5" min="0" max="1" step="0.001" ></webaudio-knob>
+                </div>
+                <div class="compTopCurveBox">
+                  <!-- <img class="top_plate" src="./images/bg_top_plate.png" width="400" height="265" alt=""> -->
+                  <div class="canvas_wrapper">
+                    <div class="canvas_container flexible center start">
+                      <canvas id="dryCanvas" width="400" height="265" ></canvas>
+                      <canvas id="wetCanvas" width="400" height="265" ></canvas>
+                    </div>
+                    <div class="compCurveContainer">
+                      <canvas id="compCanvas" width="600" height="400"></canvas>
+                    </div>
+                  </div>
+                </div>
+                <div class="compTopMeterBox">
+                  <webaudio-knob src="./images/cb_led_meter.png" id="inMeter" class="inMeter" sensitivity="0.75" enable="1" width="24" height="265" sprites="50" value="-70" min="-70" max="6" step="0.01" ></webaudio-knob>
+                  <webaudio-knob src="./images/cb_led_meter.png" id="outMeter" class="outMeter" sensitivity="0.75" enable="1" width="24" height="265" sprites="50" value="-70" min="-70" max="6" step="0.01" ></webaudio-knob>
+                </div>
+              </div>
+<!----------------->
+              <div class="compContainerBottom">
+                <div class="compControlKnobWrapper">
+                  <div class="compControlKnobs">
+                    <div class="compMainControls">
+                      <div class="compControllerRow">
+                        <webaudio-knob src="./images/sil_max_ridge_l.png" id="threshold_control" class="knob" sensitivity="0.125" enable="1" diameter="125" sprites="100" value="-10" min="-72.0" max="0" step="0.01" valuetip="1"></webaudio-knob>
+                        <webaudio-knob src="./images/sil_max_ridge_c.png" id="ratio_control" class="knob" sensitivity="0.125" enable="1" diameter="125" sprites="100" value="12" min="1" max="20" step="0.05" valuetip="1"></webaudio-knob>
+                        <webaudio-knob src="./images/sil_max_ridge_r.png" id="knee_control" class="knob" sensitivity="0.125" enable="1" diameter="125" sprites="100" value="15" min="0" max="40" step="1" valuetip="1"></webaudio-knob>
+                      </div>
+                      <div class="compControllerRow">
+                        <webaudio-knob src="./images/sil_max_ridge_l.png" id="attack_control" class="knob" sensitivity="0.125" enable="1" diameter="125" sprites="100" value="0.03" min="0.005" max="1" step="0.001" valuetip="1"></webaudio-knob>
+                        <webaudio-knob src="./images/sil_max_ridge_c.png" id="release_control" class="knob" sensitivity="0.125" enable="1" diameter="125" sprites="100" value="0.25" min="0.005" max="1" step="0.001" valuetip="1"></webaudio-knob>
+                        <webaudio-knob src="./images/sil_max_ridge_r.png" id="makeup_control" class="knob" sensitivity="0.125" enable="1" diameter="125" sprites="100" value="0.01" min="0.1" max="20" step="0.01" valuetip="1"></webaudio-knob>
+                      </div>
+
+                      <div class="automakeupBtn">
+                        <div class="">
+                          <webaudio-switch id="indicator" src="./images/indicator.png"  name="indicator" class="indicator" width="25" height="25" type="toggle"> </webaudio-switch>
+                        </div>
+                        <div class="">
+                          <webaudio-switch id="autoMakeup_control" src="./images/button.png"  name="autoMakeup" class="autoMakeup" type="toggle" width="41" height="42"> </webaudio-switch>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+<!----------------->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./tuna-min.js"></script>
+    <script src="./cb_webaudio-controls.js"></script>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

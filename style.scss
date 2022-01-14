@@ -1,0 +1,224 @@
+@import './flexible.scss';
+
+.app {
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.transport_wrapper {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  .transport {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .transBtn {
+      width: 90px;
+      height: 50px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #startButton {
+      background: #0ac940;
+      color: #fff;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+    #stopButton {
+      background: #da2f2f;
+      color: #fff;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+
+.plug {
+  width: 100vw;
+  margin-top: 25px;
+}
+
+.plate {
+  width: 826px;
+  height: 714px;
+  background-image: url('./images/big_comp_small.png');
+  .plate_face {
+    width: 85%;
+    height: 100%;
+  }
+}
+
+.plate_wrapper > * {
+  transform: scale(0.7);
+}
+
+.compContainer {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  .compContainerTop {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .compContainerBottom {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.compTopKnobBox {
+  width: 20%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  .knob {
+    margin-bottom: 25px;
+  }
+}
+
+.compTopMeterBox {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .meter{
+    margin: 0 5px;
+  }
+}
+
+.compTopCurveBox {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .canvas_wrapper {
+    position: relative;
+    top: 0;
+    left: 0;
+    background: url('./images/bg.png');
+    background-size: cover;
+    .compCurveContainer {
+     width: 400px;
+     height: 265px;
+    #compCanvas{
+      z-index: 9999999;
+        width: 400px;
+        height: 265px;
+      }
+    }
+    .canvas_container {
+      width: 400px;
+      height: 265px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      #dryCanvas{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 400px;
+        height: 265px;
+      }
+      #wetCanvas{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 400px;
+        height: 265px;
+      }
+    }
+  }
+
+}
+
+.compControlKnobWrapper {
+  height: 100%;
+  width: 90%;
+  .compControlKnobs {
+    height: 100%;
+    width: 100%;
+    // background: rgba(237, 23, 84, 0.61);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    .compControlRight {
+      justify-content: flex-end;
+    }
+    .compControlLeft {
+      justify-content: flex-start;
+    }
+    .compControlRight,
+    .compControlLeft  {
+      width: 20%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      .compControllerRow {
+        height: 40%;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .compMainControls {
+      width: 90%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      .compControllerRow {
+        height: 40%;
+        width: 100%;
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: space-around;
+      }
+    }
+  }
+}
+
+.automakeupBtn {
+  position: absolute;
+  bottom:  -11px;
+  right: 11px;
+  width: 50px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
